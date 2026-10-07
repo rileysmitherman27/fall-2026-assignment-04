@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 850" width="100%" height="100%" style="background-color: #0d1117; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;">
+  <defs>
+    <style>
+      .entity-box { fill: #161b22; stroke: #30363d; stroke-width: 1.5; rx: 6px; }
+      .entity-header { fill: #21262d; }
+      .entity-title { fill: #58a6ff; font-weight: 600; font-size: 14px; text-anchor: middle; dominant-baseline: middle; }
+      .attr-type { fill: #ff7b72; font-size: 12px; font-family: ui-monospace, SFMono-Regular, monospace; }
+      .attr-name { fill: #c9d1d9; font-size: 12px; font-family: ui-monospace, SFMono-Regular, monospace; }
+      .attr-key { fill: #d29922; font-weight: bold; font-size: 11px; font-family: ui-monospace, SFMono-Regular, monospace; text-anchor: end; }
+      .attr-comment { fill: #8b949e; font-size: 11px; font-style: italic; }
+      .rel-line { stroke: #8b949e; stroke-width: 1.5; fill: none; }
+      .rel-label { fill: #79c0ff; font-size: 11px; text-anchor: middle; dominant-baseline: middle; }
+      .rel-card { fill: #8b949e; font-size: 10px; font-family: ui-monospace, SFMono-Regular, monospace; text-anchor: middle; dominant-baseline: middle; }
+    </style>
+    <marker id="dot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6">
+      <circle cx="5" cy="5" r="3" fill="#8b949e" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="550" y="30" fill="#f0f6fc" font-size="20" font-weight="bold" text-anchor="middle">Library Management System - Entity Relationship Diagram</text>
+
+  <!-- USERS -->
+  <g transform="translate(50, 70)">
+    <rect class="entity-box" width="220" height="135" />
+    <path class="entity-header" d="M 0,6 Q 0,0 6,0 L 214,0 Q 220,0 220,6 L 220,32 L 0,32 Z" />
+    <text x="110" y="16" class="entity-title">USERS</text>
+    <line x1="0" y1="32" x2="220" y2="32" stroke="#30363d" stroke-width="1.5" />
+    <text x="12" y="52" class="attr-type">int</text>
+    <text x="80" y="52" class="attr-name">id</text>
+    <text x="208" y="52" class="attr-key">PK</text>
+    <text x="12" y="74" class="attr-type">string</text>
+    <text x="80" y="74" class="attr-name">email</text>
+    <text x="208" y="74" class="attr-key">UK</text>
+    <text x="12" y="96" class="attr-type">string</text>
+    <text x="80" y="96" class="attr-name">name</text>
+    <text x="12" y="118" class="attr-type">timestamp</text>
+    <text x="80" y="118" class="attr-name">created_at</text>
+  </g>
+
+  <!-- BORROWERS -->
+  <g transform="translate(50, 300)">
+    <rect class="entity-box" width="220" height="155" />
+    <path class="entity-header" d="M 0,6 Q 0,0 6,0 L 214,0 Q 220,0 220,6 L 220,32 L 0,32 Z" />
+    <text x="110" y="16" class="entity-title">BORROWERS</text>
+    <line x1="0" y1="32" x2="220" y2="32" stroke="#30363d" stroke-width="1.5" />
+    <text x="12" y="52" class="attr-type">int</text>
+    <text x="80" y="52" class="attr-name">id</text>
+    <text x="208" y="52" class="attr-key">PK</text>
+    <text x="12" y="74" class="attr-type">int</text>
+    <text x="80" y="74" class="attr-name">user_id</text>
+    <text x="208" y="74" class="attr-key">FK, UK</text>
+    <text x="12" y="96" class="attr-type">string</text>
+    <text x="80" y="96" class="attr-name">card_number</text>
+    <text x="208" y="96" class="attr-key">UK</text>
+    <text x="12" y="118" class="attr-type">string</text>
+    <text x="80" y="118" class="attr-name">phone</text>
+    <text x="12" y="140" class="attr-type">timestamp</text>
+    <text x="80" y="140" class="attr-name">created_at</text>
+  </g>
+
+  <!-- LOANS -->
+  <g transform="translate(50, 560)">
+    <rect class="entity-box" width="220" height="200" />
+    <path class="entity-header" d="M 0,6 Q 0,0 6,0 L 214,0 Q 220,0 220,6 L 220,32 L 0,32 Z" />
+    <text x="110" y="16" class="entity-title">LOANS</text>
+    <line x1="0" y1="32" x2="220" y2="32" stroke="#30363d" stroke-width="1.5" />
+    <text x="12" y="52" class="attr-type">int</text>
+    <text x="80" y="52" class="attr-name">id</text>
+    <text x="208" y="52" class="attr-key">PK</text>
+    <text x="12" y="74" class="attr-type">int</text>
+    <text x="80" y="74" class="attr-name">borrower_id</text>
+    <text x="208" y="74" class="attr-key">FK</text>
+    <text x="12" y="96" class="attr-type">int</text>
+    <text x="80" y="96" class="attr-name">book_id</text>
+    <text x="208" y="96" class="attr-key">FK</text>
+    <text x="12" y="118" class="attr-type">date</text>
+    <text x="80" y="118" class="attr-name">loan_date</text>
+    <text x="12" y="140" class="attr-type">date</text>
+    <text x="80" y="140" class="attr-name">due_date</text>
+    <text x="12" y="162" class="attr-type">date</text>
+    <text x="80" y="162" class="attr-name">return_date</text>
+    <text x="12" y="184" class="attr-type">string</text>
+    <text x="80" y="184" class="attr-name">status</text>
+  </g>
+
+  <!-- BOOKS -->
+  <g transform="translate(440, 430)">
+    <rect class="entity-box" width="220" height="155" />
+    <path class="entity-header" d="M 0,6 Q 0,0 6,0 L 214,0 Q 220,0 220,6 L 220,32 L 0,32 Z" />
+    <text x="110" y="16" class="entity-title">BOOKS</text>
+    <line x1="0" y1="32" x2="220" y2="32" stroke="#30363d" stroke-width="1.5" />
+    <text x="12" y="52" class="attr-type">int</text>
+    <text x="80" y="52" class="attr-name">id</text>
+    <text x="208" y="52" class="attr-key">PK</text>
+    <text x="12" y="74" class="attr-type">string</text>
+    <text x="80" y="74" class="attr-name">title</text>
+    <text x="12" y="96" class="attr-type">string</text>
+    <text x="80" y="96" class="attr-name">isbn</text>
+    <text x="208" y="96" class="attr-key">UK</text>
+    <text x="12" y="118" class="attr-type">int</text>
+    <text x="80" y="118" class="attr-name">publication_year</text>
+    <text x="12" y="140" class="attr-type">timestamp</text>
+    <text x="80" y="140" class="attr-name">created_at</text>
+  </g>
+
+  <!-- BOOK_AUTHORS -->
+  <g transform="translate(440, 180)">
+    <rect class="entity-box" width="220" height="90" />
+    <path class="entity-header" d="M 0,6 Q 0,0 6,0 L 214,0 Q 220,0 220,6 L 220,32 L 0,32 Z" />
+    <text x="110" y="16" class="entity-title">BOOK_AUTHORS</text>
+    <line x1="0" y1="32" x2="220" y2="32" stroke="#30363d" stroke-width="1.5" />
+    <text x="12" y="52" class="attr-type">int</text>
+    <text x="80" y="52" class="attr-name">book_id</text>
+    <text x="208" y="52" class="attr-key">PK, FK</text>
+    <text x="12" y="74" class="attr-type">int</text>
+    <text x="80" y="74" class="attr-name">author_id</text>
+    <text x="208" y="74" class="attr-key">PK, FK</text>
+  </g>
+
+  <!-- AUTHORS -->
+  <g transform="translate(830, 160)">
+    <rect class="entity-box" width="220" height="110" />
+    <path class="entity-header" d="M 0,6 Q 0,0 6,0 L 214,0 Q 220,0 220,6 L 220,32 L 0,32 Z" />
+    <text x="110" y="16" class="entity-title">AUTHORS</text>
+    <line x1="0" y1="32" x2="220" y2="32" stroke="#30363d" stroke-width="1.5" />
+    <text x="12" y="52" class="attr-type">int</text>
+    <text x="80" y="52" class="attr-name">id</text>
+    <text x="208" y="52" class="attr-key">PK</text>
+    <text x="12" y="74" class="attr-type">string</text>
+    <text x="80" y="74" class="attr-name">name</text>
+    <text x="12" y="96" class="attr-type">text</text>
+    <text x="80" y="96" class="attr-name">bio</text>
+  </g>
+
+  <!-- BOOK_GENRES -->
+  <g transform="translate(440, 690)">
+    <rect class="entity-box" width="220" height="90" />
+    <path class="entity-header" d="M 0,6 Q 0,0 6,0 L 214,0 Q 220,0 220,6 L 220,32 L 0,32 Z" />
+    <text x="110" y="16" class="entity-title">BOOK_GENRES</text>
+    <line x1="0" y1="32" x2="220" y2="32" stroke="#30363d" stroke-width="1.5" />
+    <text x="12" y="52" class="attr-type">int</text>
+    <text x="80" y="52" class="attr-name">book_id</text>
+    <text x="208" y="52" class="attr-key">PK, FK</text>
+    <text x="12" y="74" class="attr-type">int</text>
+    <text x="80" y="74" class="attr-name">genre_id</text>
+    <text x="208" y="74" class="attr-key">PK, FK</text>
+  </g>
+
+  <!-- GENRES -->
+  <g transform="translate(830, 670)">
+    <rect class="entity-box" width="220" height="110" />
+    <path class="entity-header" d="M 0,6 Q 0,0 6,0 L 214,0 Q 220,0 220,6 L 220,32 L 0,32 Z" />
+    <text x="110" y="16" class="entity-title">GENRES</text>
+    <line x1="0" y1="32" x2="220" y2="32" stroke="#30363d" stroke-width="1.5" />
+    <text x="12" y="52" class="attr-type">int</text>
+    <text x="80" y="52" class="attr-name">id</text>
+    <text x="208" y="52" class="attr-key">PK</text>
+    <text x="12" y="74" class="attr-type">string</text>
+    <text x="80" y="74" class="attr-name">name</text>
+    <text x="208" y="74" class="attr-key">UK</text>
+    <text x="12" y="96" class="attr-type">text</text>
+    <text x="80" y="96" class="attr-name">description</text>
+  </g>
+
+  <!-- Relationships -->
+
+  <!-- USERS to BORROWERS (1 to 0..1) -->
+  <path class="rel-line" d="M 160,205 L 160,300" />
+  <rect x="135" y="240" width="50" height="18" fill="#161b22" rx="3" stroke="#30363d" stroke-width="1" />
+  <text x="160" y="250" class="rel-label">extends</text>
+  <text x="150" y="218" class="rel-card">||</text>
+  <text x="150" y="290" class="rel-card">o|</text>
+
+  <!-- BORROWERS to LOANS (1 to 0..N) -->
+  <path class="rel-line" d="M 160,455 L 160,560" />
+  <rect x="135" y="495" width="50" height="18" fill="#161b22" rx="3" stroke="#30363d" stroke-width="1" />
+  <text x="160" y="505" class="rel-label">borrows</text>
+  <text x="150" y="470" class="rel-card">||</text>
+  <text x="150" y="545" class="rel-card">o{</text>
+
+  <!-- BOOKS to LOANS (1 to 0..N) -->
+  <path class="rel-line" d="M 440,530 L 350,530 L 350,640 L 270,640" />
+  <rect x="325" y="575" width="55" height="18" fill="#161b22" rx="3" stroke="#30363d" stroke-width="1" />
+  <text x="352" y="585" class="rel-label">loaned_in</text>
+  <text x="420" y="522" class="rel-card">||</text>
+  <text x="285" y="632" class="rel-card">o{</text>
+
+  <!-- BOOKS to BOOK_AUTHORS (1 to 0..N) -->
+  <path class="rel-line" d="M 550,430 L 550,270" />
+  <rect x="535" y="340" width="30" height="18" fill="#161b22" rx="3" stroke="#30363d" stroke-width="1" />
+  <text x="550" y="350" class="rel-label">has</text>
+  <text x="562" y="415" class="rel-card">||</text>
+  <text x="562" y="285" class="rel-card">o{</text>
+
+  <!-- AUTHORS to BOOK_AUTHORS (1 to 0..N) -->
+  <path class="rel-line" d="M 830,225 L 660,225" />
+  <rect x="715" y="216" width="65" height="18" fill="#161b22" rx="3" stroke="#30363d" stroke-width="1" />
+  <text x="747" y="226" class="rel-label">written_by</text>
+  <text x="815" y="217" class="rel-card">||</text>
+  <text x="675" y="217" class="rel-card">o{</text>
+
+  <!-- BOOKS to BOOK_GENRES (1 to 0..N) -->
+  <path class="rel-line" d="M 550,585 L 550,690" />
+  <rect x="495" y="628" width="110" height="18" fill="#161b22" rx="3" stroke="#30363d" stroke-width="1" />
+  <text x="550" y="638" class="rel-label">categorized_under</text>
+  <text x="562" y="600" class="rel-card">||</text>
+  <text x="562" y="675" class="rel-card">o{</text>
+
+  <!-- GENRES to BOOK_GENRES (1 to 0..N) -->
+  <path class="rel-line" d="M 830,735 L 660,735" />
+  <rect x="720" y="726" width="55" height="18" fill="#161b22" rx="3" stroke="#30363d" stroke-width="1" />
+  <text x="747" y="736" class="rel-label">includes</text>
+  <text x="815" y="727" class="rel-card">||</text>
+  <text x="675" y="727" class="rel-card">o{</text>
+</svg>
